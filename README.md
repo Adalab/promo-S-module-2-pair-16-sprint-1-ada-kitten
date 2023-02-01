@@ -40,8 +40,8 @@ La solución del ejercicio completo se subirá al final del módulo, si en una s
 
 - [x] 1. Crea el proyecto
 - [x] 2. Entiende el código html y css del proyecto
-- [TO DO] 3. **FORMULARIO:** Mostrar formulario
-- [TO DO] 4. **LISTADO:** Listado: Mostrar gatitos desde JS
+- [x] 3. **FORMULARIO:** Mostrar formulario
+- [x] 4. **LISTADO:** Listado: Mostrar gatitos desde JS
 
 #### 2.2 Intro a la programación 2:
 
