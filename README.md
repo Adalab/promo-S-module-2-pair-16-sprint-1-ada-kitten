@@ -45,13 +45,13 @@ La solución del ejercicio completo se subirá al final del módulo, si en una s
 
 #### 2.2 Intro a la programación 2:
 
-- [ x] 1. **LISTADO:** Mejora como se guarda la información
-- [x ] 2. **LISTADO - Bonus:** Nombre de gatitos en mayúsculas
+- [x] 1. **LISTADO:** Mejora como se guarda la información
+- [x] 2. **LISTADO - Bonus:** Nombre de gatitos en mayúsculas
 
 #### 2.3 Condicionales:
 
-- [ ] 1. **FILTRAR:** Búsqueda por descripción.
-- [ ] 2. **LISTADO - Bonus:**: ¿Y si no hay raza?.
+- [x] 1. **FILTRAR:** Búsqueda por descripción.
+- [x] 2. **LISTADO - Bonus:**: ¿Y si no hay raza?.
 
 #### 2.4 Eventos:
 

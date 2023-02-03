@@ -60,70 +60,91 @@ Repetir este proceso por cada gatito */
 // Con la variable (LIST de arriba, fila 8 del js), le ponemos la info de los 3 gatos.
 // KatList.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-const KatList = document.querySelector('.js-list');
-const KittenOneImage = 'https://dev.adalab.es/gato-siames.webp';
-const KittenOneName = 'Anastacio';
-const KittenOneDesc = 'Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
-const KittenOneRace = 'Siamés';
+const katList = document.querySelector('.js-list');
+const kittenOneImage = 'https://dev.adalab.es/gato-siames.webp';
+const kittenOneName = 'Anastacio';
+const kittenOneDesc = 'Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
+const kittenOneRace = 'Siamés';
 
 
-KatList.innerHTML =
+const kittenOne = 
 `<li class="card">
 <article>
   <img
     class="card_img" 
-    src= ${KittenOneImage}
+    src= ${kittenOneImage}
     alt="gatito"
   />
-  <h3 class="card_title"> ${KittenOneName.toUpperCase()} </h3>
-  <h4 class="card_race"> ${KittenOneRace} </h4>
+  <h3 class="card_title"> ${kittenOneName.toUpperCase()} </h3>
+  <h4 class="card_race"> ${kittenOneRace === ""?"Uy que despiste, no sabemos su racita jejeje, à bientôtttt!" : kittenOneRace} </h4>
   <p class="card_description">
-    ${KittenOneDesc} 
+    ${kittenOneDesc} 
    </p>
 </article>
 </li>`;
+katList.innerHTML = kittenOne
+//Hay un OPERADOR TENARIO -> ? = la pregunta en sí, es el primer if, si se cumple la primera condición (lo que va entre llaves) 
+// : = else if.
+// Si quitamos la raza en cualquiera de los gatos, lo que pasa es que nos devuelve el else if (como la segunda condición), que sería el mensajito de uy blablabla.
 
+const kittenTwoImage = 'https://dev.adalab.es/sphynx-gato.webp';
+const kittenTwoName = 'Fiona';
+const kittenTwoDesc = 'Produce fascinación y curiosidad. Exótico, raro, bello, extraño…hasta con pinta de alienígena han llegado a definir a esta raza    gatuna que se caracteriza por la «ausencia» de pelo.';
+const kittenTwoRace = 'Sphynx';
 
-
-const KittenTwoImage = 'https://dev.adalab.es/sphynx-gato.webp';
-const KittenTwoName = 'Fiona';
-const KittenTwoDesc = 'Produce fascinación y curiosidad. Exótico, raro, bello, extraño…hasta con pinta de alienígena han llegado a definir a esta raza    gatuna que se caracteriza por la «ausencia» de pelo.';
-const KittenTwoRace = 'Sphynx';
-
-KatList.innerHTML +=
+const kittenTwo = 
 `<li class="card">
 <img
 class="card_img"
-src= ${KittenTwoImage}
+src= ${kittenTwoImage}
 alt="sphynx-cat"
 />
-<h3 class="card_title">${KittenTwoName.toUpperCase()} </h3>
-<h4 class="card_race">${KittenTwoRace} </h4>
+<h3 class="card_title">${kittenTwoName.toUpperCase()} </h3>
+<h4 class="card_race">${kittenTwoRace === ""?"Uy no veas que despiste, no sabemos su racita jejeje, à bientôtttt!" : kittenTwoRace} </h4>
 <p class="card_description">
-    ${KittenTwoDesc}
+    ${kittenTwoDesc}
 </p>
-</li>`
+</li>`;
+katList.innerHTML += kittenTwo
 
+const kittenThreeImage = 'https://dev.adalab.es/maine-coon-cat.webp';
+const kittenThreeName = 'Cielo';
+const kittenThreeDesc = 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad.     Sus ojos son grandes y las orejas resultan largas y en punta.';
+const kittenThreeRace = 'Maine Coon';
 
-const KittenThreeImage = 'https://dev.adalab.es/maine-coon-cat.webp';
-const KittenThreeName = 'Cielo';
-const KittenThreeDesc = 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad.     Sus ojos son grandes y las orejas resultan largas y en punta.';
-const KittenThreeRace = 'Maine Coon';
-
-KatList.innerHTML +=
+const kittenThree = 
 `<li class="card">
 <img
     class="card_img"
-    src= ${KittenThreeImage}
+    src= ${kittenThreeImage}
     alt="maine-coon-cat"
 />
-<h3 class="card_title">${KittenThreeName.toUpperCase()} </h3>
-<h4 class="card_race">${KittenThreeRace} </h4>
+<h3 class="card_title">${kittenThreeName.toUpperCase()} </h3>
+<h4 class="card_race">${kittenThreeRace === ""?"Uy que despistillo, no sabemos su racita jejeje, à bientôtttt!" : kittenThreeRace} </h4>
 <p class="card_description">
-    ${KittenThreeDesc}
+    ${kittenThreeDesc}
 </p>
 </li>`;
+katList.innerHTML += kittenThree
+// document.querySelector es para llamarlo a HTML
+//innerHTML es para llevarlo a HTML y que te de una respuesta
+
+
+// kittenOneName = KittenOneName.toUpperCase(); -> Mayúsculas
+
+
+const buscar = document.querySelector('.js_in_search_desc');
+const valorBuscar = buscar.value;
+// Si coincide una palabra que la usuaria ponga un valor y que nos lo encuentre, nos lo traerá, es como un filtro:
+// if (kittenOneDesc.includes(valorBuscar) ) {
+//   katList.innerHTML = kittenOne;
+// } 
+// if (kittenTwoDesc.includes(valorBuscar) ) {
+//   katList.innerHTML = kittenTwo;
+// }
+// if (kittenThreeDesc.includes(valorBuscar) ) {
+//   katList.innerHTML = kittenThree;
+// }
 
 
 
-// KittenOneName = KittenOneName.toUpperCase();
