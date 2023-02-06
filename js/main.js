@@ -148,16 +148,16 @@ const valorBuscar = buscar.value;
 // }
 
 // 1. FORMULARIO: Mostrar/ocultar el formulario
-// const kittenPlus = document.querySelector('.js-btn');
-// const formKitten = document.querySelector('.js-new-form');
-// kittenPlus.addEventListener('click', (event) => {
-//   event.preventDefault();
-//   if (formKitten.classList.contains('collapsed')){
-//     formKitten.classList.remove('collapsed');
-//   } else {
-//     formKitten.classList.add('collapsed');
-//   }
-// });
+const kittenPlus = document.querySelector('.js-btn');
+const formKitten = document.querySelector('.js-new-form');
+kittenPlus.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (formKitten.classList.contains('collapsed')){
+    formKitten.classList.remove('collapsed');
+  } else {
+    formKitten.classList.add('collapsed');
+  }
+});
 
 // 2. FORMULARIO: Adicionar nuevo gatito
 
@@ -166,14 +166,23 @@ const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
 const labelMessageError = document.querySelector('.js-label-error');
+
 buttonAddKitten.addEventListener('click', (event) => {
   event.preventDefault();
   const valueDesc = inputDesc.value;
   const valuePhoto = inputPhoto.value;
   const valueName = inputName.value;
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
+    labelMessageError.innerHTML = `¡Uy! parece que has olvidado algo`;
   } else {
-    labelMessageError
+    labelMessageError.innerHTML = `¡Bien Laia!`;
   }
+});
+
+// 3. FORMULARIO: Cancelar formulario
+// const formKitten = document.querySelector('.js-new-form');
+const cancel = document.querySelector('.js-btn-cancel');
+cancel.addEventListener('click', (event) => {
+  event.preventDefault();
+  formKitten.classList.add('collapsed');
 });
