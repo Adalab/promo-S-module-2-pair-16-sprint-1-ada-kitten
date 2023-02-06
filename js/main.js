@@ -83,6 +83,7 @@ const kittenOne =
 </article>
 </li>`;
 katList.innerHTML = kittenOne
+// ----- LISTADO BONUS - ¿Y SI NO HAY RAZA? -----
 //Hay un OPERADOR TENARIO -> ? = la pregunta en sí, es el primer if, si se cumple la primera condición (lo que va entre llaves) 
 // : = else if.
 // Si quitamos la raza en cualquiera de los gatos, lo que pasa es que nos devuelve el else if (como la segunda condición), que sería el mensajito de uy blablabla.
@@ -135,7 +136,7 @@ katList.innerHTML += kittenThree
 
 const buscar = document.querySelector('.js_in_search_desc');
 const valorBuscar = buscar.value;
-// Si coincide una palabra que la usuaria ponga un valor y que nos lo encuentre, nos lo traerá, es como un filtro:
+// Si coincide una palabra que la usuaria ponga un valor y que nos lo encuentre, nos lo traerá, es como un filtro. La función INCLUDES, antes de añadir cada gato, solo muestra aquellos gatos que contengan la palabra introducida por la usuaria:
 // if (kittenOneDesc.includes(valorBuscar) ) {
 //   katList.innerHTML = kittenOne;
 // } 
