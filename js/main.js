@@ -147,5 +147,33 @@ const valorBuscar = buscar.value;
 //   katList.innerHTML = kittenThree;
 // }
 
+// 1. FORMULARIO: Mostrar/ocultar el formulario
+// const kittenPlus = document.querySelector('.js-btn');
+// const formKitten = document.querySelector('.js-new-form');
+// kittenPlus.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   if (formKitten.classList.contains('collapsed')){
+//     formKitten.classList.remove('collapsed');
+//   } else {
+//     formKitten.classList.add('collapsed');
+//   }
+// });
 
+// 2. FORMULARIO: Adicionar nuevo gatito
 
+const buttonAddKitten = document.querySelector('.js-btn-add');
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
+buttonAddKitten.addEventListener('click', (event) => {
+  event.preventDefault();
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
+  } else {
+    labelMessageError
+  }
+});
