@@ -150,14 +150,34 @@ const valorBuscar = buscar.value;
 // 1. FORMULARIO: Mostrar/ocultar el formulario
 const kittenPlus = document.querySelector('.js-btn');
 const formKitten = document.querySelector('.js-new-form');
-kittenPlus.addEventListener('click', (event) => {
+
+
+function showNewCatForm() {
+  formKitten.classList.remove('collapsed');
+}
+function hideNewCatForm() {
+  formKitten.classList.add('collapsed');
+}
+
+function handleClickNewCatForm(event) {
   event.preventDefault();
-  if (formKitten.classList.contains('collapsed')){
+  if (formKitten.classList.contains('collapsed')) {
     formKitten.classList.remove('collapsed');
   } else {
     formKitten.classList.add('collapsed');
   }
-});
+}
+
+kittenPlus.addEventListener('click', handleClickNewCatForm);
+
+// (event) => {
+//   event.preventDefault();
+//   if (formKitten.classList.contains('collapsed')){
+//    formKitten.classList.remove('collapsed'); 
+//   } else {
+      // formKitten.classList.add('collapsed'); 
+//   }
+
 
 // 2. FORMULARIO: Adicionar nuevo gatito
 
@@ -167,8 +187,8 @@ const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
 const labelMessageError = document.querySelector('.js-label-error');
 
-buttonAddKitten.addEventListener('click', (event) => {
-  event.preventDefault();
+function addNewKitten(event) {
+   event.preventDefault();
   const valueDesc = inputDesc.value;
   const valuePhoto = inputPhoto.value;
   const valueName = inputName.value;
@@ -177,7 +197,20 @@ buttonAddKitten.addEventListener('click', (event) => {
   } else {
     labelMessageError.innerHTML = `¡Bien Laia!`;
   }
-});
+}
+buttonAddKitten.addEventListener('click', addNewKitten);
+
+// buttonAddKitten.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   const valueDesc = inputDesc.value;
+//   const valuePhoto = inputPhoto.value;
+//   const valueName = inputName.value;
+//   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+//     labelMessageError.innerHTML = `¡Uy! parece que has olvidado algo`;
+//   } else {
+//     labelMessageError.innerHTML = `¡Bien Laia!`;
+//   }
+// });
 
 // 3. FORMULARIO: Cancelar formulario
 // const formKitten = document.querySelector('.js-new-form');
@@ -186,3 +219,84 @@ cancel.addEventListener('click', (event) => {
   event.preventDefault();
   formKitten.classList.add('collapsed');
 });
+
+// 5. Funciones I : ejercicio 3 Listado:
+
+function renderKitten(url, desc, name, race) {
+  const url = kittenOneImage.value + kittenTwoImage.value + kittenThreeImage.value;
+  const desc = kittenOneDesc.value + kittenTwoDesc.value + kittenThreeDesc.value;
+  const name = kittenOneName.value + kittenTwoName.value + kittenThreeName.value;
+  const race = kittenOneRace.value + kittenTwoRace.value + kittenThreeRace.value; 
+
+  katList.innerHTML = url ${kittenOneImage.value} + 
+
+}
+
+
+// const katList = document.querySelector('.js-list');
+// const kittenOneImage = 'https://dev.adalab.es/gato-siames.webp';
+// const kittenOneName = 'Anastacio';
+// const kittenOneDesc = 'Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
+// const kittenOneRace = 'Siamés';
+
+
+// const kittenOne = 
+// `<li class="card">
+// <article>
+//   <img
+//     class="card_img" 
+//     src= ${kittenOneImage}
+//     alt="gatito"
+//   />
+//   <h3 class="card_title"> ${kittenOneName.toUpperCase()} </h3>
+//   <h4 class="card_race"> ${kittenOneRace === ""?"Uy que despiste, no sabemos su racita jejeje, à bientôtttt!" : kittenOneRace} </h4>
+//   <p class="card_description">
+//     ${kittenOneDesc} 
+//    </p>
+// </article>
+// </li>`;
+// katList.innerHTML = kittenOne
+// // ----- LISTADO BONUS - ¿Y SI NO HAY RAZA? -----
+// //Hay un OPERADOR TENARIO -> ? = la pregunta en sí, es el primer if, si se cumple la primera condición (lo que va entre llaves) 
+// // : = else if.
+// // Si quitamos la raza en cualquiera de los gatos, lo que pasa es que nos devuelve el else if (como la segunda condición), que sería el mensajito de uy blablabla.
+
+// const kittenTwoImage = 'https://dev.adalab.es/sphynx-gato.webp';
+// const kittenTwoName = 'Fiona';
+// const kittenTwoDesc = 'Produce fascinación y curiosidad. Exótico, raro, bello, extraño…hasta con pinta de alienígena han llegado a definir a esta raza    gatuna que se caracteriza por la «ausencia» de pelo.';
+// const kittenTwoRace = 'Sphynx';
+
+// const kittenTwo = 
+// `<li class="card">
+// <img
+// class="card_img"
+// src= ${kittenTwoImage}
+// alt="sphynx-cat"
+// />
+// <h3 class="card_title">${kittenTwoName.toUpperCase()} </h3>
+// <h4 class="card_race">${kittenTwoRace === ""?"Uy no veas que despiste, no sabemos su racita jejeje, à bientôtttt!" : kittenTwoRace} </h4>
+// <p class="card_description">
+//     ${kittenTwoDesc}
+// </p>
+// </li>`;
+// katList.innerHTML += kittenTwo
+
+// const kittenThreeImage = 'https://dev.adalab.es/maine-coon-cat.webp';
+// const kittenThreeName = 'Cielo';
+// const kittenThreeDesc = 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad.     Sus ojos son grandes y las orejas resultan largas y en punta.';
+// const kittenThreeRace = 'Maine Coon';
+
+// const kittenThree = 
+// `<li class="card">
+// <img
+//     class="card_img"
+//     src= ${kittenThreeImage}
+//     alt="maine-coon-cat"
+// />
+// <h3 class="card_title">${kittenThreeName.toUpperCase()} </h3>
+// <h4 class="card_race">${kittenThreeRace === ""?"Uy que despistillo, no sabemos su racita jejeje, à bientôtttt!" : kittenThreeRace} </h4>
+// <p class="card_description">
+//     ${kittenThreeDesc}
+// </p>
+// </li>`;
+// katList.innerHTML += kittenThree
